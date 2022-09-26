@@ -49,7 +49,10 @@
                 document.body.style.backgroundImage = "url('bg.gif')"
                 amongass.play();
                 document.querySelector("h1").style.display = "none";
-                window.onclick, window.onkeydown, window.onbeforeunload = function(){return false;}
+                function dis(){return false;}
+                window.onkeydown = dis;
+                window.onbeforeunload = dis;
+                window.onclick = dis;
             }
             window.onclick = handleAmongASS;
             window.onkeydown = handleAmongASS;
