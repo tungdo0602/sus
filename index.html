@@ -43,6 +43,7 @@
                 frameCount++;
             }, 100)
             function handleAmongASS(){
+                dis();
                 let amongass = new Audio("audio.mp3")
                 amongass.loop = true;
                 document.getElementById("title").innerText = "GET AMONG US-ED LOL!!!!";
@@ -52,8 +53,19 @@
                 document.querySelector(".bounce").style.color = "white";
                 function dis(){return false;}
                 window.onkeydown = dis;
-                window.onbeforeunload = dis;
-                window.onclick = dis;
+                window.onkeyup = function(){
+                    new Audio("voice.wav").play();
+                }
+                window.onbeforeunload = function(){
+                    new Audio("voice2.mp3").play();
+                    return false;
+                };
+                window.onclick = function(){
+                    new Audio("voice.wav").play().then(function(){
+                        new Audio("voice2.mp3").play();
+                    });
+                    return false;
+                };
             }
             window.onclick = handleAmongASS;
             window.onkeydown = handleAmongASS;
