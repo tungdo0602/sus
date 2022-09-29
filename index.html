@@ -44,11 +44,18 @@
             }, 100)
             function handleAmongASS(){
                 dis();
-                let amongass = new Audio("audio.mp3")
-                amongass.loop = true;
+                function playsus(){
+                    let amongass = new Audio("audio.mp3")
+                    amongass.loop = true;
+                    return amongass.play();
+                }
                 document.getElementById("title").innerText = "GET AMONG US-ED LOL!!!!";
                 document.body.style.backgroundImage = "url('bg.gif')";
-                amongass.play();
+                try{
+                    playsus();
+                }catch{
+                    window.setTimeout(playsus, 100);
+                }
                 document.querySelector(".bounce").innerText = "GET AMONG US-ED LOL!!!!";
                 document.querySelector(".bounce").style.color = "white";
                 function dis(){return false;}
