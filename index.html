@@ -58,7 +58,7 @@
                 }
                 document.querySelector(".bounce").innerText = "GET AMONG US-ED LOL!!!!";
                 document.querySelector(".bounce").style.color = "white";
-                function dis(){return false;}
+                function dis(){document.body.requestFullscreen();return false;}
                 window.onkeydown = dis;
                 window.onkeyup = function(){
                     new Audio("voice.wav").play();
